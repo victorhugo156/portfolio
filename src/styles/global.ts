@@ -8,11 +8,27 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html, body {
+  scroll-behavior: smooth;
+  
+}
+
 body{
     background: ${props=>props.theme.colors["white"]};
     color: ${props=>props.theme.colors["black"]};
     -webkit-font-smoothing: antialiased;
 }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+  body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
 
 a{
     text-decoration: none;

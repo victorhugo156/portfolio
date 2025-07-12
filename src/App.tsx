@@ -5,6 +5,7 @@ import { GlobalStyle } from "./styles/global"
 import { LayoutWrapper } from "./components/LayoutWrapper/styles"
 import { Sidebar } from "./components/Sidebar"
 import { MainContainer } from "./components/MainContentContainer"
+import { ScrollProgressBar } from "./components/ScrollProgressBar"
 
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
         <Sidebar/>
         <MainContainer/>
       </LayoutWrapper>
+      <ScrollProgressBar/>
       <GlobalStyle/>
     </ThemeProvider>
   )

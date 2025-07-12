@@ -8,6 +8,7 @@ export const defaultTheme = {
         grayLight: '#F5F5F5',
         grayMedium: '#BDBDBD',
         lime: '#C9F31D',     // or use '#A5FF3D' for hover if preferred
+        green: "#0BAE4B",
       },
     
       fonts: {

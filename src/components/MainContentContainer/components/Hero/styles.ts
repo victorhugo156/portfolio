@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Banner = styled.div`
-background: ${props=>props.theme.colors["grayLight"]};
+background: ${props => props.theme.colors["grayLight"]};
 
 width: 100%;
 
@@ -10,20 +10,66 @@ padding-bottom: 3rem;
 
 `
 
-export const ContainerName = styled.div`
-background: purple;
+export const ContainerHero = styled.div`
 
-width: 17rem;
-height: 18.5rem;
+width: 40rem;
+height: 25.25rem;
 
 display: flex;
-flex-direction: column;
-justify-content: center;
 
-font-family: ${props=>props.theme.fonts["heading"]};
-font-size: ${props=>props.theme.fontSizes["lg"]};
-font-weight: ${props=>props.theme.fontWeights["bold"]};
+`
 
-line-height: 190%;
+export const WrapperName = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: center;
+
+    padding-right: .5rem;
+
+h1{
+    font-family: ${props => props.theme.fonts["heading"]};
+    font-size: ${props=> props.theme.fontSizes["3xl"]};
+    font-weight: ${props=>props.theme.fontWeights["bold"]};
+
+    line-height: 100%;
+    letter-spacing: -.2rem;
+
+}
+
+`
+
+export const WrapperJobName = styled.div`
+
+    display: flex;
+    flex-direction: column;
+
+
+div:first-child{
+    background-color: ${props => props.theme.colors["gray"]};
+
+    width: .2rem;
+    height: 10.68rem;
+
+    margin-bottom: 4rem;
+
+}
+p{
+    font-family: ${props => props.theme.fonts["heading"]};
+    font-size: ${props=> props.theme.fontSizes["md"]};
+    
+    letter-spacing: .125rem;
+
+}
+div:last-child{
+    width: .1rem;
+    height: 4.8rem;
+
+    background-color: ${props => props.theme.colors["gray"]};
+
+    margin-top: .5rem
+
+}
 
 `

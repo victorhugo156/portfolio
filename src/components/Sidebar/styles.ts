@@ -32,7 +32,7 @@ div{
 
     margin-top: 2rem;
 
-    background-color: ${props=>props.theme.colors["lime"]};
+    background-color: ${props=>props.theme.colors["green"]};
 }
 
 `
