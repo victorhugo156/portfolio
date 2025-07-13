@@ -3,12 +3,12 @@ export interface Event {
   date: string;
   title: string;
   heading: string;
-  description: string;
 }
 
 export const events: Event[] = [
-  { title: "Mother’s Birthday", date: "10 Feb", heading: "Day you've been waiting for", description: "Her special day..." },
-  { title: "Graduation",      date: "20 Jun",  heading: "Day you've been waiting for",description: "Finished university..." },
-  { title: "First Job",       date: "01 Sep",  heading: "Day you've been waiting for", description: "Started career..." },
-  // …add as many as you like
+  { title: "Print Force", date: "Apr 2021 – Current", heading: "Print Finisher"},
+  { title: "Moyai – Accessibility Solutions App (Australia)", date: "Dec 2024 – Mar 2025", heading: "Flutter & Backend Development Intern"},
+  { title: "FMW – Men’s Fashion Store", date: "Nov 2017 – Jan 2019", heading: "Graphic Designer & Social Media Content Creator"},
+  { title: "Semmler Group (Insurance Company)", date: "Mar 2014 – Oct 2015",  heading: "Marketing Coordinator" },
+  { title: "Atos", date: "Jan 2007 – Oct 2013",  heading: "Marketing Analyst"},
 ];

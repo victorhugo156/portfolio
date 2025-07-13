@@ -2,147 +2,106 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 100vw;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
+  background: white;
   position: relative;
-  &::-webkit-scrollbar { display: none; }
+  width: 100%;
+  height: 15rem;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
 `;
 
 export const List = styled.ul`
-  --primary-color: #4000ff;    /* whatever your theme color is */
-  --scale: 1;                   /* default scale for your pop-out effect */
-
-  background-color: #888;
   position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   height: 0.12rem;
   padding: 0 4rem;
-  list-style: none;
-  margin: 0;
+  transform: translateY(-50%);
   display: flex;
-  left: 0; top: 50%;
+  padding: 0 4rem;
+  background: ${props=>props.theme.colors["gray"]};
+  list-style: none;
+  transition: left 0.3s ease-out;
 `;
-
-
 
 export const Item = styled.li`
   position: relative;
-  width: 20rem;
+  flex: 0 0 auto;      /* never shrink, never grow */
+  margin: 0 8rem;      /* tweak horizontal spacing as you like */
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0.12rem;
-    height: 1rem;
-    background-color: #888;
-    transition: background-color 0.3s ease;
-  }
-
-  &::after {
-    content: attr(data-date);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -150%);
-    color: #fff;
-    font-size: 0.8rem;
-    white-space: nowrap;
-  }
-
-  /* flip the date to below the line on even items */
-  &:nth-child(even)::after {
-    transform: translate(-50%, 200%);
-  }
-
-  &:hover::before {
-    background-color: var(--primary-color);
-  }
-  &:hover::after {
-    color: var(--primary-color);
-  }
+export const Dot = styled.span`
+  pointer-events: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: ${props=>props.theme.colors["green"]};
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Title = styled.span`
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 200%);  /* show below the line by default */
-  font-weight: 600;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  left: 50%;                  /* pin to the center of the Item */
+  top: 2.4rem;                /* just below the dot */
+  transform: translateX(-50%);/* center it exactly */
 
-  /* on hover, fade it in */
-  ${Item}:hover & {
-    opacity: 1;
-  }
+  width: 150px;               /* limit how wide it can go */
+  text-align: center;         /* wrap nicely under itself */
+  white-space: normal;        /* allow multiple lines */
+
+  font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 1;
+
+  transition: 0.5s ease;
+
 `;
 
-export const DataBox = styled.div`
+export const Details = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(var(--scale));
-  width: 1.3rem;
-  height: 1.3rem;
-  border-radius: 50%;
-  background-color: #888;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
-  transition: 
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  background: #444;
+  color: white;
+  border-radius: 8px;
+  padding: 0;
+  transition: all 0.3s ease;
+  
+  /* when “open”, we’ll expand */
+  &.open {
+    width: 220px;
+    height: 150px;
+    padding: 1rem;
+  }
 
-  &:hover {
-    background-color: var(--primary-color);
-    --scale: 1.2;
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+  small {
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+  p {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+  button {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.2rem 0.5rem;
     cursor: pointer;
-    z-index: 200;
   }
-
-  &.show {
-    background-color: aqua;
-    width: 22rem;
-    height: 15rem;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    box-shadow: 0 0.1rem 0.4rem #0004;
-    --scale: 1;  /* reset scale so the full pane isn’t multiplied again */
-    z-index: 300;
-    transform: translate(-50%, -50%) scale(1);
-  }
-`;
-
-export const Heading = styled.h3`
-  text-transform: capitalize;
-`;
-
-export const Small = styled.small`
-  font-size: 0.8rem;
-  opacity: 0.7;
-`;
-
-export const Paragraph = styled.p`
-  background-color: #fff3;
-  padding: 1rem;
-  margin-left: 0.7rem;
-  transition: margin 0.3s ease;
-  .show & { margin-left: 0; }
-`;
-
-export const Close = styled.span`
-  align-self: flex-start;
-  background-color: antiquewhite;
-  padding: 0.5rem 0.8rem;
-  border-radius: 2rem;
-  font-size: 1rem;
 `;
