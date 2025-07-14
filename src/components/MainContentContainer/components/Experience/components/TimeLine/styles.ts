@@ -46,7 +46,7 @@ export const Dot = styled.span`
 
 export const Title = styled.span`
 
-  width: 150px;               /* limit how wide it can go */
+  width: 190px;               /* limit how wide it can go */
   
   position: absolute;
   left: 50%;                  /* pin to the center of the Item */

@@ -6,7 +6,6 @@ export function Experience(){
     return(
         <Container>
             <Timeline events={events}/>
-            <h1>Hellooo</h1>
         </Container>
     )
 }

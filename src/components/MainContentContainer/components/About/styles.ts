@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+position: relative;
 background: ${props => props.theme.colors["grayLight"]};
 
 width: 100%;
 
 padding: 0 2rem;
+
+padding-bottom:3rem;
 
 `
 
@@ -77,8 +80,5 @@ li div p{
 li div p:last-child{
     font-weight: ${props=>props.theme.fontWeights["regular"]};
 }
-
-
-
 
 `

@@ -13,7 +13,6 @@ type Event = {
   date: string;
   title: string;
   heading: string;
-  description: string;
 };
 
 export function Timeline({ events }: { events: Event[] }) {
