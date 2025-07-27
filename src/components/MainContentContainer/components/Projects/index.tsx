@@ -1,9 +1,13 @@
-import { ContainerProjects, ProjectDetailsContainer, ProjectImage } from "./styles";
-import HairDresser from "../../../../assets/img/hair-dresser.png";
+import { ContainerProjects, ProjectDetailsContainer } from "./styles";
+// import HairDresser from "../../../../assets/img/hair-dresser.png";
 import { projects } from "../../../../data/projects";
 import { ProjectDetails } from "./components/ProjectDetail";
+import { useState } from "react";
 
 export function Projects() {
+
+    const [hoveredIdx, setHoveredIdx] = useState<number|null>(null)
+    
     return (
         <ContainerProjects> 
             <ProjectDetailsContainer>
@@ -12,29 +16,20 @@ export function Projects() {
                 key={project.id}
                 project={project}
                 index={i+1}
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx(null)}
+                visible={hoveredIdx === i} 
                 />
                 ))}
             </ProjectDetailsContainer>
-            <ProjectImage>
-                <img src={HairDresser} alt="Hair Dresser Project" />
-            </ProjectImage>
+            {/* <ProjectImage visible={hoveredIdx !== null}>
+                {
+                    hoveredIdx !== null && (
+                    <img src={HairDresser} alt="Hair Dresser Project" />
+                    )
+                }
+                
+            </ProjectImage> */}
         </ContainerProjects>
     )
 }
-
-                    // <ContainerDetails>
-                    //     <div>
-                    //         <p>{`0.${index}`}</p>
-                    //     </div>
-                    //     <div>
-                    //         <h3>{project.title}</h3>
-                    //         <ul>
-                    //             {project.technologies.map((tech, idx) => (
-                    //                 <li key={idx}>
-                    //                     <p>{tech}</p>
-                    //                     <div></div>
-                    //                 </li>
-                    //             ))}
-                    //         </ul>
-                    //     </div>
-                    // </ContainerDetails>

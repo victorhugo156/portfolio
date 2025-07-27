@@ -1,5 +1,5 @@
 
-import React, { useRef, useLayoutEffect } from 'react'
+import React, { useRef, useLayoutEffect, useState } from 'react'
 
 import { KanbanIcon } from "@phosphor-icons/react";
 import { About } from "./components/About";
@@ -20,8 +20,9 @@ import { Footer } from "./components/Footer";
 gsap.registerPlugin(ScrollTrigger)
 
 export function MainContainer() {
-    const wrapper = useRef<HTMLDivElement>(null)
-    const footer = useRef<HTMLDivElement>(null)
+    const wrapper = useRef<HTMLDivElement>(null);
+    const footer = useRef<HTMLDivElement>(null);
+    const [footerVisible, setFooterVisible] = useState(false);
 
     useLayoutEffect(() => {
         if (!wrapper.current || !footer.current) return
@@ -41,7 +42,15 @@ export function MainContainer() {
             // markers: true,
         })
 
-        console.log(footerHeight)
+        // 2) flip React state just as the bottom of proj‐wrapper hits the top of the viewport
+        ScrollTrigger.create({
+            trigger: wrapper.current,
+            start: 'bottom bottom',  // as soon as the bottom edge touches bottom of screen
+            end: 'bottom top',     // until it scrolls past the top
+            onEnter: () => setFooterVisible(true),
+            onLeaveBack: () => setFooterVisible(false),
+        })
+
 
         return () => ScrollTrigger.getAll().forEach(t => t.kill())
     }, [])
@@ -61,7 +70,7 @@ export function MainContainer() {
                 </WrapperProjects>
             </MainContentContainer>
             <FooterWrapper >
-                <Footer />
+                <Footer footerVisible={footerVisible} />
                 <div ref={footer}></div>
             </FooterWrapper >
 

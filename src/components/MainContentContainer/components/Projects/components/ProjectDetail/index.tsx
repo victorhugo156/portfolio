@@ -1,15 +1,18 @@
-import { Button, ContainerCallToActions, ContainerDetails, ContainerIndex, ContainerProjectDescription, WrapperDetails } from "./styles";
+import { Button, ContainerCallToActions, ContainerDetails, ContainerIndex, ContainerProjectDescription, ProjectImage, WrapperDetails } from "./styles";
 import type { Project } from "../../../../../../data/projects";
 import { GithubLogoIcon } from "@phosphor-icons/react";
 
 interface Props {
     project: Project;
     index: number;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
+    visible: boolean;
 }
 
-export function ProjectDetails({ project, index }: Props) {
+export function ProjectDetails({ project, index, onMouseEnter, onMouseLeave, visible }: Props) {
     return (
-        <ContainerDetails>
+        <ContainerDetails onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <ContainerIndex>
                 <p>{`0.${index}`}</p>
             </ContainerIndex>
@@ -26,10 +29,7 @@ export function ProjectDetails({ project, index }: Props) {
                     })}
                 </ul>
                 <ContainerProjectDescription>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                    Tempore vitae similique commodi, vero cumque quasi ullam 
-                                    ducimus voluptatibus ratione fugiat et aliquid sint magnam 
-                                    dolore illo enim maiores nisi possimus.</p>
+                    <p>{project.description}</p>
                 </ContainerProjectDescription>
                 <ContainerCallToActions>
                     <Button>
@@ -42,6 +42,10 @@ export function ProjectDetails({ project, index }: Props) {
                     </Button>
                 </ContainerCallToActions>
             </WrapperDetails>
+
+            <ProjectImage visible={visible}>
+                    <img src={project.image} alt="Hair Dresser Project" />
+            </ProjectImage>
         </ContainerDetails>
     )
 }

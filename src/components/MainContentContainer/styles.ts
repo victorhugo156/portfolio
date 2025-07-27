@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const MainContentContainer = styled.main`
 position: relative;
 
@@ -49,5 +50,7 @@ export const FooterWrapper = styled.div`
   position: relative;             /* for proper z-index stacking */
 
   z-index: 10;                    /* above your gray section */
+
+
 
 `
