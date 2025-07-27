@@ -40,4 +40,8 @@ body, input, textarea, button{
     font-weight: ${props=>props.theme.fontWeights["regular"]}
 }
 
+li{
+  list-style: none;
+}
+
 `;
