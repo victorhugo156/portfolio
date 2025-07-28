@@ -35,4 +35,8 @@ div{
     background-color: ${props=>props.theme.colors["green"]};
 }
 
+@media (min-width: ${props => props.theme.brakpoints.mobileS}) {
+  display: none;
+}
+
 `

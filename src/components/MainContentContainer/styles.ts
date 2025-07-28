@@ -10,7 +10,12 @@ margin: 0 auto;
 
 padding: 0 6rem;
 
-overflow-x: visible;   
+overflow-x: visible;
+
+@media (min-width: ${props => props.theme.brakpoints.mobileS}) {
+  padding: 0;
+}
+
 
 `
 
@@ -50,7 +55,4 @@ export const FooterWrapper = styled.div`
   position: relative;             /* for proper z-index stacking */
 
   z-index: 10;                    /* above your gray section */
-
-
-
 `

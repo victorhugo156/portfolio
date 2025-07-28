@@ -17,6 +17,12 @@ height: 25.25rem;
 
 display: flex;
 
+@media (min-width: ${props => props.theme.brakpoints.mobileS}) {
+    height: 15rem;
+}
+
+
+
 `
 
 export const WrapperName = styled.div`
@@ -36,6 +42,12 @@ h1{
     line-height: 100%;
     letter-spacing: -.2rem;
 
+}
+
+@media (min-width: ${props => props.theme.brakpoints.mobileS}) {
+    h1{
+        font-size: ${props=> props.theme.fontSizes["2xl"]};
+    }
 }
 
 `

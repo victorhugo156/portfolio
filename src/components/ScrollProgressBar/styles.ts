@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const ScrollContainer = styled.div`
   position: fixed;
   right: 0.5rem;
-  top: 30rem;
-  width: 4px;
-  height: 20vh;
+  top: 20rem;
+  width: 8px;
+  height: 30vh;
   background-color: rgba(255, 255, 255, 0.1); // transparent background
   z-index: 999;
   border-radius: 2px;

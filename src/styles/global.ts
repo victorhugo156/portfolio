@@ -17,18 +17,17 @@ body{
     background: ${props=>props.theme.colors["white"]};
     color: ${props=>props.theme.colors["black"]};
     -webkit-font-smoothing: antialiased;
+
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE10+ */
+
 }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  body::-webkit-scrollbar {
-    display: none;
-  }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-  body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
+/* 2) WebKit (Chrome, Safari, Edge) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
 
 a{
     text-decoration: none;
