@@ -2,28 +2,27 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: white;
-  position: relative;
+  background: ${props => props.theme.colors["white"]};
   width: 100%;
   height: 15rem;
+  position: relative;
   overflow-x: hidden;
   display: flex;
-  align-items: center;
+
 `;
 
 export const List = styled.ul`
+  background: ${props=>props.theme.colors["gray"]};
+  display: flex;
+  height: 0.12rem;
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 0.12rem;
+  top: 30%;
   padding: 0 4rem;
   transform: translateY(-50%);
-  display: flex;
-  padding: 0 4rem;
-  background: ${props=>props.theme.colors["gray"]};
   list-style: none;
   transition: left 0.3s ease-out;
+
 `;
 
 export const Item = styled.li`
@@ -45,21 +44,16 @@ export const Dot = styled.span`
 `;
 
 export const Title = styled.span`
-
   width: 190px;               /* limit how wide it can go */
-  
   position: absolute;
   left: 50%;                  /* pin to the center of the Item */
   top: 2.4rem;                /* just below the dot */
   transform: translateX(-50%);/* center it exactly */
-
   font-weight: ${props=>props.theme.fontWeights["bold"]};
-
+  font-size: ${props=>props.theme.fontSizes["base"]};
   text-align: center;         /* wrap nicely under itself */
   white-space: normal;        /* allow multiple lines */
-
   opacity: 1;
-
   transition: 0.5s ease;
 `;
 
@@ -104,13 +98,9 @@ export const Details = styled.div`
   button {
     background: transparent;
     color: white;
-
     margin-top: 0.5rem;
-
     font-size: 0.8rem;
-
     border: 1px solid white;
-
     padding: 0.2rem 0.5rem;
     cursor: pointer;
   }

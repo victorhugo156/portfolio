@@ -7,7 +7,6 @@ export function HeaderMenu(){
             <a href="">
                 <ListIcon size={48} color="#0BAE4B"/>
             </a>
-
         </HeaderMenuContainer>
     )
 }

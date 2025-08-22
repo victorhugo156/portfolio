@@ -7,12 +7,10 @@ const scroll = keyframes`
 `
 
 export const SliderWrapper = styled.div`
-
   overflow: hidden;
   width: 100%;
   background-color: #fff; // or transparent
   padding: 1rem 0;
-
 `
 
 export const SLiderTrack = styled.div`
@@ -24,7 +22,6 @@ display: flex;
 `
 
 export const SlideItem = styled.div`
-
   flex: 0 0 auto;
   margin: 0 1.5rem;
 
@@ -32,5 +29,6 @@ export const SlideItem = styled.div`
     height: 40px;
     width: auto;
   }
+
 
 `

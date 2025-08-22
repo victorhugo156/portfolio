@@ -10,6 +10,8 @@ export const ScrollContainer = styled.div`
   z-index: 999;
   border-radius: 2px;
   pointer-events: none; // this ensures it doesn't block clicks
+
+  
 `
 
 export const ScrollIndicator = styled.div`

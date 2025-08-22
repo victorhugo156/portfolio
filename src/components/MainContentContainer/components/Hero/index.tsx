@@ -14,7 +14,6 @@ export function Hero() {
                     <div></div>
                 </WrapperJobName>
             </ContainerHero>
-
         </Banner>
     )
 }
