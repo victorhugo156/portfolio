@@ -5,3 +5,13 @@ export const Container = styled.div`
   padding: 0 2rem;
 
 `
+
+export const ContainerJobsExperience = styled.li` 
+
+display: flex;
+flex-direction: column;
+gap: .5rem;
+
+padding-bottom: 3rem;
+
+`

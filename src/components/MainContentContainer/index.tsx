@@ -3,7 +3,7 @@ import React, { useRef, useLayoutEffect, useState } from 'react'
 
 import { KanbanIcon } from "@phosphor-icons/react";
 import { About } from "./components/About";
-import { Title } from "./components/About/components/Title";
+import { Title } from "./components/Title";
 import { HeaderMenu } from "./components/HeaderMenu";
 import { Hero } from "./components/Hero";
 import { SkillSlider } from "./components/SkillSlider";

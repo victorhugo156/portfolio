@@ -9,6 +9,10 @@ export const Container = styled.div`
   width: 100%;
   padding: 0 2rem;
   padding-bottom: 3rem;
+
+  ${responsive.maxMobileL`
+      padding: 0 .8rem;
+  `}
 `
 
 export const ContainerAboutMe = styled.div`
@@ -33,54 +37,5 @@ export const ContainerAboutMe = styled.div`
 
   p {
     line-height: 130%;
-  }
-`
-
-export const ContainerEducation = styled.div`
-  display: flex;
-  padding-left: 3rem;
-  padding-right: 3rem;
-
-  ${responsive.maxMobileL`
-    flex-direction: column;
-  `}
-
-  ul {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  ul li {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  div {
-    background-color: ${props => props.theme.colors["gray"]};
-    width: .1rem;
-    height: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  ul li div:last-child {
-    background-color: transparent;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .5rem;
-  }
-
-  li div p {
-    font-weight: ${props=>props.theme.fontWeights["bold"]};
-  }
-
-  li div p:last-child {
-    font-weight: ${props=>props.theme.fontWeights["regular"]};
   }
 `

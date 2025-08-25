@@ -9,13 +9,13 @@ import {
   Details,
 } from './styles';
 
-type Event = {
+type JobExperience = {
   date: string;
   title: string;
   heading: string;
 };
 
-export function Timeline({ events }: { events: Event[] }) {
+export function Timeline({ jobExperience }: { jobExperience: JobExperience[] }) {
 
   // ref to the scrolling container
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,7 @@ export function Timeline({ events }: { events: Event[] }) {
   return (
     <Wrapper ref={wrapperRef} onMouseMove={handleMouseMove}>
       <List ref={listRef}>
-        {events.map((evt, idx) => (
+        {jobExperience.map((evt, idx) => (
           <Item key={idx} onClick={() => setOpenIndex(openIndex === idx ? null : idx)}>
             <Dot />
             <Title>{evt.title}</Title>

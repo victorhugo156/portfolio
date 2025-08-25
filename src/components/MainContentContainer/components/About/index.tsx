@@ -1,7 +1,8 @@
 import { GraduationCapIcon, SuitcaseIcon } from "@phosphor-icons/react";
-import { Title } from "./components/Title";
-import { Container, ContainerAboutMe, ContainerEducation } from "./styles";
+import { Title } from "../Title";
+import { Container, ContainerAboutMe } from "./styles";
 import { Experience } from "../Experience";
+import { Education } from "../Education";
 
 
 export function About() {
@@ -29,35 +30,7 @@ export function About() {
             </ContainerAboutMe>
 
             <Title icon={<GraduationCapIcon size={32} color="#0BAE4B"/>} sectionTitle={"EDUCATION"} />
-            <ContainerEducation>
-                <ul>
-                    <li>
-                        <h3>NOW</h3>
-                        <div></div>
-                        <div>
-                            <p>Master of Information Technology</p>
-                            <p>Kaplan Business Scholl - Australia</p>
-                        </div>
-                    </li>
-                    <li>
-                        <h3>2024</h3>
-                        <div></div>
-                        <div>
-                            <p>Bachelor’s Degree in Mobile App Development </p>
-                            <p>AIT - Academy of Information Technology - Australia</p>
-                        </div>
-                    </li>
-                    <li>
-                        <h3>2009</h3>
-                        <div></div>
-                        <div>
-                            <p>Bachelor’s Degree in Advertisement and Communication</p>
-                            <p>Universidade Anhembi Morumbi - Brazil</p>
-                        </div>
-                    </li>
-                </ul>
-                 
-            </ContainerEducation>
+            <Education/>
             <Title icon={<SuitcaseIcon size={32} color="#0BAE4B"/>} sectionTitle={"EXPERIENCE"} />
             <Experience/>
         </Container>

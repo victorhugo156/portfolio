@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+import { responsive } from '../../../../../../utils/mixins';
 
 export const Wrapper = styled.div`
   background: ${props => props.theme.colors["white"]};
@@ -8,6 +9,10 @@ export const Wrapper = styled.div`
   position: relative;
   overflow-x: hidden;
   display: flex;
+
+  ${responsive.maxMobileL`
+      display: none;
+  `}
 
 `;
 

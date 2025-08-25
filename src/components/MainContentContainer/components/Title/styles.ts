@@ -1,5 +1,7 @@
 
 import styled from "styled-components";
+import { responsive } from "../../../../utils/mixins";
+import type { DefaultTheme } from 'styled-components';
 
 export const Header = styled.div`
   width: 100%;
@@ -10,6 +12,10 @@ export const Header = styled.div`
 
   h1 {
     white-space: nowrap;
+
+    ${responsive.maxMobileL`
+      font-size: ${(props: { theme: DefaultTheme }) => props.theme.fontSizes["md"]};
+    `}
   }
 
   div {

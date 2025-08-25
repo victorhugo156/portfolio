@@ -1,11 +1,11 @@
 // src/data/events.ts
-export interface Event {
+export interface JobExperience {
   date: string;
   title: string;
   heading: string;
 }
 
-export const events: Event[] = [
+export const jobExperiences: JobExperience[] = [
   { title: "Print Force", date: "Apr 2021 – Current", heading: "Print Finisher"},
   { title: "Moyai – Accessibility Solutions App (Australia)", date: "Dec 2024 – Mar 2025", heading: "Flutter & Backend Development Intern"},
   { title: "FMW – Men’s Fashion Store", date: "Nov 2017 – Jan 2019", heading: "Graphic Designer & Social Media Content Creator"},
